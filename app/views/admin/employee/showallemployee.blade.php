@@ -117,7 +117,7 @@
                       <i class="ace-icon fa fa-pencil bigger-130"></i>
                     </a>
 
-                    <a class="red" href="#">
+                    <a class="red" href="{{ url('admin/employee/delete/'.$emp->emp_ID) }}">
                       <i class="ace-icon fa fa-trash-o bigger-130"></i>
                     </a>
                   </div>
@@ -146,7 +146,7 @@
                         </li>
 
                         <li>
-                          <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+                          <a href="{{ url('admin/employee/delete/'.$emp->emp_ID) }}" class="tooltip-error" data-rel="tooltip" title="Delete">
                             <span class="red">
                               <i class="ace-icon fa fa-trash-o bigger-120"></i>
                             </span>

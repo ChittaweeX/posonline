@@ -5,6 +5,39 @@
 @section('custom-css')
 
 @endsection
+@section('breadcrumb')
+  <div class="breadcrumbs" id="breadcrumbs">
+    <script type="text/javascript">
+      try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+    </script>
+
+    <ul class="breadcrumb">
+      <li>
+        <i class="ace-icon fa fa-dashboard"></i>
+        <a href="{{ url('admin') }}">หน้าหลัก</a>
+      </li>
+      <li>
+        <i class="ace-icon fa fa-male"></i>
+        พนักงาน
+      </li>
+      <li >
+          <i class="ace-icon fa fa-table"></i>
+        <a href="{{ url('admin/employee/showallemployee') }}">  พนักงานทั้งหมด </a></li>
+        <li class="active">
+            <i class="ace-icon fa fa-edit"></i>
+           แก้ไขพนักงาน </li>
+    </ul><!-- /.breadcrumb -->
+
+    <div class="nav-search" id="nav-search">
+      <form class="form-search">
+        <span class="input-icon">
+          <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+          <i class="ace-icon fa fa-search nav-search-icon"></i>
+        </span>
+      </form>
+    </div><!-- /.nav-search -->
+  </div>
+@endsection
 @section('content')
   <div class="page-header">
     <h1>
@@ -14,7 +47,8 @@
 
   <div class="row">
     <div class="col-xs-12">
-      <form class="form-horizontal" action="{{ url('admin/employee/addnewemp') }}" role="form" method="post" enctype="multipart/form-data">
+      <form class="form-horizontal" action="{{ url('admin/employee/updateemp') }}" role="form" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="{{ $employeedata->emp_ID }}">
         <div class="form-group">
           <label class="col-sm-3 control-label no-padding-right" > ชื่อ-นามสกุล </label>
           <div class="col-sm-9">
@@ -52,7 +86,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label class="col-sm-3 control-label no-padding-right" > รูปภาพ </label>
+          <label class="col-sm-3 control-label no-padding-right" > รูปภาพ ใหม่</label>
           <div class="col-sm-9">
             <input type="file" name="photo"  class="col-xs-10 col-sm-5" />
           </div>
