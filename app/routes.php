@@ -19,7 +19,8 @@ Route::get('/', function()
 Route::controller('login', 'LoginController');
 //Route::group(array('before'=>'auth'),function()
 //{
-
+Route::controller('admin/shop', 'Admin_ShopController');
+Route::controller('admin/employeeposition', 'Admin_PositionController');
 Route::controller('admin/employee', 'Admin_EmployeeController');
 Route::controller('admin', 'AdminController');
 

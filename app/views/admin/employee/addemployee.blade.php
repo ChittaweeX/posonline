@@ -24,7 +24,7 @@
           <i class="ace-icon fa fa-plus"></i>
         เพิ่มพนักงานใหม่</li>
     </ul><!-- /.breadcrumb -->
-    
+
     <div class="nav-search" id="nav-search">
       <form class="form-search">
         <span class="input-icon">
@@ -46,6 +46,14 @@
   <div class="row">
     <div class="col-xs-12">
       <form class="form-horizontal" action="{{ url('admin/employee/addnewemp') }}" role="form" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label class="col-sm-3 control-label no-padding-right" > สาขา </label>
+          <div class="col-sm-9">
+            <select class="col-xs-10 col-sm-5" name="">
+              <option value="">กรุณาเลือกสาขา</option>
+            </select>
+          </div>
+        </div>
         <div class="form-group">
           <label class="col-sm-3 control-label no-padding-right" > ชื่อ-นามสกุล </label>
           <div class="col-sm-9">

@@ -1,6 +1,6 @@
 @extends('default_admin_layout')
 @section('title')
-  Stock | Backend
+  New Shop | Backend
 @endsection
 @section('custom-css')
 
@@ -13,10 +13,17 @@
     </script>
 
     <ul class="breadcrumb">
-      <li class="active">
-        <i class="ace-icon fa fa-dashboard "></i>
-        หน้าหลัก
+      <li>
+        <i class="ace-icon fa fa-dashboard"></i>
+        <a href="{{ url('admin') }}">หน้าหลัก</a>
       </li>
+      <li>
+        <i class="ace-icon fa fa-home"></i>
+        ร้านค้า
+      </li>
+      <li class="active">
+          <i class="ace-icon fa fa-plus"></i>
+        สร้างข้อมูลร้านเริ่มต้น</li>
     </ul><!-- /.breadcrumb -->
 
     <div class="nav-search" id="nav-search">
@@ -31,17 +38,13 @@
 @endsection
 @section('content')
 
-  <div class="page-header">
-    <h1>
-      ภาพรวม
-    </h1>
-  </div><!-- /.page-header -->
-
-
-
+  <h1> ว่าง <small></small></h1>
 
 @endsection
 @section('custom-js')
 
-  
+
+@endsection
+@section('custom-jscode')
+
 @endsection

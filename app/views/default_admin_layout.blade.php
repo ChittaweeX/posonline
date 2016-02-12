@@ -59,8 +59,8 @@
 				<div class="navbar-header pull-left">
 					<a href="{{ url('admin') }}" class="navbar-brand">
 						<small>
-							<i class="fa fa-leaf"></i>
-							Stock Admin
+							<i class="fa fa-bar-chart"></i>
+							SYN STOCK
 						</small>
 					</a>
 				</div>
@@ -149,7 +149,7 @@
 						</ul>
 					</li>
 
-					<li {{ ( Request::segment(2) == 'employee' ? 'class="active open"' : '') }}>
+					<li {{ ( Request::segment(2) == 'employee' || Request::segment(2) == 'employeeposition'  ? 'class="active open"' : '') }}>
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-male"></i>
 							<span class="menu-text"> พนักงาน </span>
@@ -167,14 +167,6 @@
 
 								<b class="arrow"></b>
 							</li>
-							<li {{ ( Request::segment(3) == 'addemployee' ? 'class="active"' : '') }}>
-								<a href="{{ url('admin/employee/addemployee') }}">
-									<i class="menu-icon fa fa-caret-right"></i>
-									จัดการพนักงาน
-								</a>
-
-								<b class="arrow"></b>
-							</li>
 							<li {{ ( Request::segment(3) == 'showallemployee' ? 'class="active"' : '') }}>
 								<a href="{{ url('admin/employee/showallemployee') }}">
 									<i class="menu-icon fa fa-caret-right"></i>
@@ -183,6 +175,38 @@
 
 								<b class="arrow"></b>
 							</li>
+							<li {{ ( Request::segment(2) == 'employeeposition' ? 'class="active"' : '') }}>
+								<a href="{{ url('admin/employeeposition') }}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									จัดการตำแหน่งพนักงาน
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+					<li {{ ( Request::segment(2) == 'shop'   ? 'class="active open"' : '') }}>
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-home"></i>
+							<span class="menu-text"> ร้านค้า </span>
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li {{ ( Request::segment(3) == 'createnewshop' ? 'class="active"' : '') }}>
+								<a href="{{ url('admin/shop/createnewshop') }}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									สร้างข้อมูลร้านเริ่มต้น
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+
+
 						</ul>
 					</li>
 
@@ -204,6 +228,32 @@
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
 								@yield('content')
+
+
+								<!-- Alert Box -->
+								@if(Session::has('alert'))
+									<div class="modal" id="alertbox" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+								    <div class="modal-dialog" role="document">
+								      <div class="modal-content">
+								        <div class="modal-header">
+								          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								          <h4 class="modal-title" id="myModalLabel">แจ้งเตือน !</h4>
+								        </div>
+								        <div class="modal-body">
+								          <h4> {{ Session::get('alert')}} <small></small></h4>
+								        </div>
+								        <div class="modal-footer">
+								          <button type="button" class="btn btn-success pull-right" data-dismiss="modal">
+								            <i class="fa fa-check"></i>
+								            ตกลง</button>
+								        </div>
+								      </div>
+								    </div>
+								  </div>
+								@endif
+
+
+
 								<!-- PAGE CONTENT ENDS -->
 							</div><!-- /.col -->
 						</div><!-- /.row -->
@@ -215,7 +265,7 @@
 				<div class="footer-inner">
 					<div class="footer-content">
 						<span class="bigger-120">
-							<span class="blue bolder">Stock</span>
+							<span class="blue bolder">SYN STOCK</span>
 							Application &copy; 2016
 						</span>
 
@@ -259,6 +309,14 @@
 
 		<!-- page specific plugin scripts -->
 			@section('custom-js') @show
+				@if(Session::has('alert'))
+					<script type="text/javascript">
+				      $(window).load(function(){
+				      $('#alertbox').modal('show');
+				      });
+				      </script>
+				@endif
+
 		<!-- ace scripts -->
 		<script src="{{ url('assets/admin/js/ace-elements.min.js') }} "></script>
 		<script src="{{ url('assets/admin/js/ace.min.js') }} "></script>

@@ -2,18 +2,21 @@
     /**
      *
      */
+
     class Admin_EmployeeController extends Controller
     {
+
       public function getIndex()
       {
         return "employee Index";
       }
 
+      /// Show Add employee page ///////////
       public function getAddemployee()
       {
         return View::make('admin.employee.addemployee');
       }
-
+      /// Show Update employee page /////////
       public function getUpdateemployee($id)
       {
         $data = array('employeedata' => Employee::where('emp_ID','=',$id)
@@ -22,9 +25,7 @@
        );
         return View::make('admin.employee.editemployee',$data);
       }
-
-
-
+      /// Show Table employee page /////////
       public function getShowallemployee()
       {
         $data = array('employee' => Employee::all()
@@ -33,7 +34,7 @@
 
         return View::make('admin.employee.showallemployee',$data);
       }
-
+      /// Show Details employee page ///////
       public function getShowemployee($id)
       {
         $data = array('employeedata' => Employee::where('emp_ID','=',$id)
@@ -44,7 +45,7 @@
         return View::make('admin.employee.showemployee',$data);
       }
 
-
+      /// Add Employee //////////
       public function postAddnewemp()
       {
         $inputs = Input::all();
@@ -72,12 +73,12 @@
                 $employee->emp_username = $inputs['username'];
                 $employee->emp_password = Hash::Make($inputs['password']);
     						$employee->save();
-    						return Redirect::to('admin/employee/showallemployee')->with('alert', 'Save Completed');
+    						return Redirect::to('admin/employee/showallemployee')->with('alert', 'สร้างพนักงานสำเร็จ');
     		}
 
     		return Redirect::back();
       }
-
+      //// Update Employee ////////////
       public function postUpdateemp()
       {
         {
@@ -109,13 +110,13 @@
             $employee->emp_password = Hash::Make($inputs['password']);
             $employee->save();
 
-            	return Redirect::to('admin/employee/showallemployee')->with('alert', 'Save Completed');
+            	return Redirect::to('admin/employee/showallemployee')->with('alert', 'แก้ไขข้อมูลเรียบร้อยแล้ว');
 
           }
 
         }
       }
-
+      /// Delete Employee //////////
       public function getDelete($id)
       {
         $employee = Employee::find($id);
@@ -124,7 +125,7 @@
             $employee->delete();
         }
 
-         return Redirect::to('admin/employee/showallemployee')->with('message', 'Delete Completed');
+         return Redirect::to('admin/employee/showallemployee')->with('alert', 'ทำการลบข้อมูลเรียบร้อยแล้ว');
       }
 
     }
