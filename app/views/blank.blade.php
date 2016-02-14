@@ -35,9 +35,14 @@
       </form>
     </div><!-- /.nav-search -->
   </div>
+@endsection
 @section('content')
 
-  <h1> ว่าง <small></small></h1>
+  <div class="page-header">
+    <h1>
+      ว่าง
+    </h1>
+  </div><!-- /.page-header -->
 
 @endsection
 @section('custom-js')

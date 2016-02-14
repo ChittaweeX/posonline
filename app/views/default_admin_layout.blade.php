@@ -204,6 +204,14 @@
 
 								<b class="arrow"></b>
 							</li>
+							<li {{ ( Request::segment(3) == 'shopdetails' || Request::segment(3) == 'shopview' ? 'class="active"' : '') }}>
+								<a href="{{ url('admin/shop/shopview') }}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									แสดงร้านทั้งหมด
+								</a>
+
+								<b class="arrow"></b>
+							</li>
 
 
 
