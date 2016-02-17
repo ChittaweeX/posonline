@@ -37,12 +37,8 @@
     </h1>
   </div><!-- /.page-header -->
 
-
-
-
-
 @endsection
 @section('custom-js')
 
-
+  
 @endsection

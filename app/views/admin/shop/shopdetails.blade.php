@@ -49,7 +49,7 @@
   </div><!-- /.page-header -->
 
   <div class='row '>
-    <div class="col-sm-5 col-xs-5">
+    <div class="col-sm-7 col-xs-7">
   										<h4>ข้อมูลร้านค้า</h4>
 
   										<hr />
@@ -78,10 +78,10 @@
 
   				</div><!-- /.col -->
 
-                    <div class="col-sm-7 col-xs-7">
+                    <div class="col-sm-5 col-xs-5">
 										<div class="widget-box">
 											<div class="widget-header widget-header-flat">
-												<h4 class="widget-title">พนักงาน</h4>
+												<h4 class="widget-title">พนักงาน ทั้งหมด</h4>
 											</div>
 
 											<div class="widget-body">
@@ -92,7 +92,7 @@
                               <div class="inline pos-rel ">
                                 <div class="user text-center">
                                   <a href="#">
-                                    <img src="{{ url('image/employee/20160209162900.jpg') }}" alt="" class="img-circle" width="80" height="80" />
+                                    <img src="{{ url('image/employee/20160209162900.jpg') }}" alt="" class="img-responsive" width="80" height="80" />
                                   </a>
                                 </div>
                                 <div class="body text-center">
@@ -108,10 +108,10 @@
                           <div class="row">
                             <div class="col-md-12">
                               <h4><small>พนักงานหน้าร้าน</small></h4>
-                              <div class="inline pos-rel "style="margin-right: 20px">
+                              <div class="inline pos-rel ">
                                 <div class="user text-center">
                                   <a href="#">
-                                    <img src="{{ url('image/employee/20160209162900.jpg') }}" alt="" class="img-circle" width="80" height="80" />
+                                    <img src="{{ url('image/employee/20160209162900.jpg') }}" alt="" class="img-responsive" width="80" height="80" />
                                   </a>
                                 </div>
                                 <div class="body text-center">
@@ -123,7 +123,7 @@
                               <div class="inline pos-rel ">
                                 <div class="user text-center">
                                   <a href="#">
-                                    <img src="{{ url('image/employee/20160209162900.jpg') }}" alt="" class="img-circle" width="80" height="80" />
+                                    <img src="{{ url('image/employee/20160209162900.jpg') }}" alt="" class="img-responsive" width="80" height="80" />
                                   </a>
                                 </div>
                                 <div class="body text-center">
@@ -136,8 +136,23 @@
                             </div>
 													</div>
 												</div>
-											</div>
-										</div>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-md-6 col-xs-12">
+                        <button class="btn btn-white btn-info btn-bold btn-lg">
+                      <i class="ace-icon fa fa-edit bigger-120 blue"></i>
+                      แก้ไขข้อมูล
+                    </button>
+                      </div>
+                      <div class="col-md-6 col-xs-12">
+                        <button class="btn btn-white btn-danger btn-bold btn-lg">
+                      <i class="ace-icon fa fa-trash-o bigger-120 red"></i>
+                      ลบร้านค้า
+                    </button>
+                      </div>
+                    </div>
 									</div><!-- /.col -->
 
   </div>

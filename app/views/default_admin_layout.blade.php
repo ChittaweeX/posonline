@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="{{ url('assets/admin/font-awesome/4.2.0/css/font-awesome.min.css') }}" />
 
 		<!-- page specific plugin styles -->
-			@section('custom-css') @show
+		@section('custom-css') @show
 		<!-- text fonts -->
 		<link rel="stylesheet" href="{{ url('assets/admin/fonts/fonts.googleapis.com.css') }} " />
 
@@ -41,7 +41,7 @@
 		<script src="assets/js/html5shiv.min.js"></script>
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
-	</head>
+		</head>
 
 	<body class="no-skin">
 		<div id="navbar" class="navbar navbar-default">
@@ -237,7 +237,6 @@
 								<!-- PAGE CONTENT BEGINS -->
 								@yield('content')
 
-
 								<!-- Alert Box -->
 								@if(Session::has('alert'))
 									<div class="modal" id="alertbox" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -259,6 +258,30 @@
 								    </div>
 								  </div>
 								@endif
+
+								<div id="right-menu" class="modal aside" data-body-scroll="false" data-offset="true" data-placement="right" data-fixed="true" data-backdrop="false" tabindex="-1">
+					        <div class="modal-dialog">
+					          <div class="modal-content">
+					            <div class="modal-header no-padding">
+					              <div class="table-header">
+					                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					                  <span class="white">&times;</span>
+					                </button>
+					                 ข้อมูลการบริการ
+					              </div>
+					            </div>
+
+					            <div class="modal-body">
+					              <h4>S.I.N.Commercial Co.,Ltd.</h4>
+											</div>
+					          </div><!-- /.modal-content -->
+
+					          <button class="aside-trigger btn btn-info btn-app btn-xs ace-settings-btn" data-target="#right-menu" data-toggle="modal" type="button">
+					            <i data-icon1="fa-question-circle" data-icon2="fa-minus" class="ace-icon fa fa-question-circle bigger-110 icon-only"></i>
+					          </button>
+					        </div><!-- /.modal-dialog -->
+					      </div>
+
 
 
 
@@ -317,12 +340,27 @@
 
 		<!-- page specific plugin scripts -->
 			@section('custom-js') @show
+				<script type="text/javascript">
+			    jQuery(function($) {
+			      $('.modal.aside').ace_aside();
+
+			      $('#aside-inside-modal').addClass('aside').ace_aside({container: '#my-modal > .modal-dialog'});
+
+			      $(document).one('ajaxloadstart.page', function(e) {
+			        //in ajax mode, remove before leaving page
+			        $('.modal.aside').remove();
+			        $(window).off('.aside')
+			      });
+			    })
+			  </script>
 				@if(Session::has('alert'))
 					<script type="text/javascript">
 				      $(window).load(function(){
 				      $('#alertbox').modal('show');
 				      });
 				      </script>
+
+
 				@endif
 
 		<!-- ace scripts -->

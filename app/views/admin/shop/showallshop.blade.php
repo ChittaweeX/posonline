@@ -66,7 +66,7 @@
                                     <h4>  {{ $mastershop->shop_name }}</h4>
                                       ประเภท : ร้านค้าทั่วไป
                                   </div>
-                                  <a href="{{ url('admin/shop/shopdetails/2') }}" class="btn btn-white btn-info btn-bold">
+                                  <a href="{{ url('admin/shop/shopdetails/2') }}" class="btn btn-white btn-info btn-bold btn-sm">
                                           <i class="ace-icon fa fa-search bigger-120 blue"></i>
                                           ดูรายละเอียดร้าน
                                   </a>
@@ -101,7 +101,7 @@
                                                             <br>
                                                             ประเภท :
                                                         </div>
-                                                        <button class="btn btn-white btn-info btn-bold">
+                                                        <button class="btn btn-white btn-info btn-bold btn-sm">
                                                                 <i class="ace-icon fa fa-search bigger-120 blue"></i>
                                                                 ดูรายละเอียดร้าน
                                                         </button>
@@ -120,7 +120,7 @@
                                                             <br>
                                                             ประเภท :
                                                         </div>
-                                                        <button class="btn btn-white btn-info btn-bold">
+                                                        <button class="btn btn-white btn-info btn-bold btn-sm">
                                                                 <i class="ace-icon fa fa-search bigger-120 blue"></i>
                                                                 ดูรายละเอียดร้าน
                                                         </button>
@@ -139,7 +139,7 @@
                                                             <br>
                                                             ประเภท :
                                                         </div>
-                                                        <a href="" class="btn btn-white btn-info btn-bold">
+                                                        <a href="" class="btn btn-white btn-info btn-bold btn-sm">
                                                                 <i class="ace-icon fa fa-search bigger-120 blue"></i>
                                                                 ดูรายละเอียดร้าน
                                                         </a>
@@ -158,7 +158,7 @@
                                                             <br>
                                                             ประเภท :
                                                         </div>
-                                                        <button class="btn btn-white btn-info btn-bold">
+                                                        <button class="btn btn-white btn-info btn-bold btn-sm">
                                                                 <i class="ace-icon fa fa-search bigger-120 blue"></i>
                                                                 ดูรายละเอียดร้าน
                                                         </button>
