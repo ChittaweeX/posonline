@@ -6,7 +6,11 @@
   {
     public function getIndex()
     {
-      return View::make('admin.dashboard');
+      return View::make('admin.main.welcomehome');
+    }
+    public function getStart()
+    {
+      return View::make('admin.main.startform');
     }
   }
 
