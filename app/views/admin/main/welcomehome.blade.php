@@ -53,7 +53,7 @@
                     showMethod: 'slideDown',
                     timeOut: 4000
                 };
-                toastr.info('คุณได้รับข้อความใหม่', '');
+                toastr.info('ยินดีตอนรับ', '');
 
             }, 1300);
 
